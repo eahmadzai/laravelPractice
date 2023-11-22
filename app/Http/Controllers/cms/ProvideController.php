@@ -40,7 +40,6 @@ class ProvideController extends Controller
         $data = request()->validate([
             'title' => 'required',
             'content' => 'required'
-            sdfsdf
         ]);
         $success = Provide::create($data);
         if ($success) {
