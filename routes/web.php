@@ -18,6 +18,7 @@ use App\Http\Controllers\cms\SliderController;
 use App\Http\Controllers\cms\TaskController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\cms\ServiceController;
+use App\Http\Controllers\cms\TestimonislController;
 use App\Http\Controllers\ProvidingController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,3 +53,4 @@ Route::resource('/admin/slider', SliderController::class);
 Route::resource('/admin/contact', ContactController::class);
 Route::resource('/admin/service', ServiceController::class);
 Route::resource('/admin/providing', ProvideController::class);
+Route::resource('admin/testimonial', TestimonislController::class);

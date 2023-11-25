@@ -1,6 +1,6 @@
 @extends('cms.layout')
 @section('title')
-    CMS Edit services
+    CMS Edit testimonial
 @endsection
 @section('content')
     <div class="content-body">
@@ -15,16 +15,16 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">services Edit Form</h4>
+                            <h4 class="card-title">testimonial Edit Form</h4>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="{{ route('service.update', $service->id) }}" method="POST"
+                                <form action="{{ route('testimonial.update', $detail->id) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @method('PATCH')
                                     @csrf
                                     <div class="row">
-                                        @include('cms.services.form')
+                                        @include('cms.testimonial.form')
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-primary">Save</button>
                                 </form>

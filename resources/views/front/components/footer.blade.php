@@ -53,6 +53,10 @@
                    Ehsanullah Ahmadzai</a></p>
        </div>
    </div>
+
+
+
+
    <!-- copyright section end -->
    <!-- Javascript files-->
    <script src="{{ url('front') }}/js/jquery.min.js"></script>

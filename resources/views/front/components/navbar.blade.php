@@ -2,7 +2,8 @@
 <div class="header_section">
     <div class="container-fluid">
         <div class="costum_header">
-            <div class="logo"><a href="index.html"><img src="{{ url('front') }}/images/logo.png"></a></div>
+            <div class="logo"><a href="{{ route('homeIndex') }}"><img src="{{ url('front') }}/images/logo.png"></a>
+            </div>
             <div class="contact_menu">
                 <ul>
                     <li><img src="{{ url('front') }}/images/call-icon.png" class="padding_right_10"><a href="#"></a>

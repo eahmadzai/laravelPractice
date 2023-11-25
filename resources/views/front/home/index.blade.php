@@ -4,41 +4,7 @@
 @endsection
 @section('content')
     <!-- banner section start -->
-    <div class="banner_section layout_padding">
-        <div class="container">
-            <div id="main_slider" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    @foreach ($sliders as $index => $slider)
-                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="banner_taital">
-                                        <h1 class="banner_taital">{{ $slider->title }}</h1>
-                                        <p class="banner_text">{{ $slider->content }}
-                                        </p>
-                                    </div>
-                                    <div class="btn_main">
-                                        <div class="quote_bt active"><a href="#">Get A Quote</a></div>
-                                        <div class="contact_bt"><a href="#">Contact Us</a></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div><img src="{{ url('storage/cms/slider') }}/{{ $slider->image }}" class="banner_img">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
-                <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </div>
+
     <!-- banner section end -->
     <!-- services section start -->
     <div class="services_section layout_padding">
@@ -53,7 +19,7 @@
                             <div class="services_box">
                                 <h4 class="express_text">{{ $service->title }}</h4>
                                 <p class="lorem_text">{{ $service->content }} </p>
-                                <div class="seemore_bt"><a href="#">See More</a></div>
+                                <div class="seemore_bt "><a href="#">See More</a></div>
                                 <div><img src="{{ url('storage/cms/service') }}/{{ $service->image }}" class="image_1">
                                 </div>
                             </div>
@@ -73,12 +39,8 @@
     </div>
     <div class="providing_section_2 layout_padding">
         <div class="container">
-            <h2 class="clean_text">Clean And Quality</h2>
-            <p class="ipsum_text">It is a long established fact that a reader will be distracted by the readable content of
-                a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                distribution of letters, as opposed It is a long established fact that a reader will be distracted by the
-                readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                more-or-less normal distribution of letters, as opposed </p>
+            <h2 class="clean_text">{{ $provide->title }}</h2>
+            <p class="ipsum_text">{{ $provide->content }}</p>
             <div class="quote_bt_1"><a href="#">Get A Quote</a></div>
         </div>
     </div>
@@ -127,67 +89,69 @@
     <!-- testimonial section start -->
     <div class="testimonial_section layout_padding">
         <div class="container">
-            <h1 class="testimonial_taital">Testimonial</h1>
-            <div class="testimonial_section_2">
-                <div id="my_slider" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="testimonial_box">
-                                <div class="tectimonial_mail">
-                                    <div class="client_image_section">
-                                        <img src="{{ url('front') }}/images/client-img.png" class="client_img">
+            @foreach ($testimonials as $testimonial)
+                <h1 class="testimonial_taital">Testimonial</h1>
+                <div class="testimonial_section_2">
+                    <div id="my_slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial_box">
+                                    <div class="tectimonial_mail">
+                                        <div class="client_image_section">
+                                            <img src="{{ url('storage/cms/testimonial') }}/{{ details->image }}"
+                                                class="client_img">
+                                        </div>
+                                        <div class="client_text_section">
+                                            <p class="testimonial_text">{{ $testimonial->containt }}</p>
+                                            <h4 class="joech_text">{{ $detail->name }}</h4>
+                                            <p class="customer_text">{{ $->job }}</p>
+                                        </div>
                                     </div>
-                                    <div class="client_text_section">
-                                        <p class="testimonial_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when looking at its layout. The
-                                            point of using Lorem Ipsum is that</p>
-                                        <h4 class="joech_text">Joech</h4>
-                                        <p class="customer_text">Customer</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial_box">
+                                    <div class="tectimonial_mail">
+                                        <div class="client_image_section">
+                                            <img src="{{ url('storage/cms/testimonial') }}/{{ details->image }}"
+                                                class="client_img">
+                                        </div>
+                                        <div class="client_text_section">
+                                            <p class="testimonial_text">It is a long established fact that a reader will be
+                                                distracted by the readable content of a page when looking at its layout. The
+                                                point of using Lorem Ipsum is that</p>
+                                            <h4 class="joech_text">Joech</h4>
+                                            <p class="customer_text">Customer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial_box">
+                                    <div class="tectimonial_mail">
+                                        <div class="client_image_section">
+                                            <img src="{{ url('front') }}/images/client-img.png" class="client_img">
+                                        </div>
+                                        <div class="client_text_section">
+                                            <p class="testimonial_text">It is a long established fact that a reader will be
+                                                distracted by the readable content of a page when looking at its layout. The
+                                                point of using Lorem Ipsum is that</p>
+                                            <h4 class="joech_text">Joech</h4>
+                                            <p class="customer_text">Customer</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="testimonial_box">
-                                <div class="tectimonial_mail">
-                                    <div class="client_image_section">
-                                        <img src="{{ url('front') }}/images/client-img.png" class="client_img">
-                                    </div>
-                                    <div class="client_text_section">
-                                        <p class="testimonial_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when looking at its layout. The
-                                            point of using Lorem Ipsum is that</p>
-                                        <h4 class="joech_text">Joech</h4>
-                                        <p class="customer_text">Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="testimonial_box">
-                                <div class="tectimonial_mail">
-                                    <div class="client_image_section">
-                                        <img src="{{ url('front') }}/images/client-img.png" class="client_img">
-                                    </div>
-                                    <div class="client_text_section">
-                                        <p class="testimonial_text">It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when looking at its layout. The
-                                            point of using Lorem Ipsum is that</p>
-                                        <h4 class="joech_text">Joech</h4>
-                                        <p class="customer_text">Customer</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </div>
-                    <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    </a>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!-- testimonial section end -->

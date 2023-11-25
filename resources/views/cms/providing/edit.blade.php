@@ -1,6 +1,6 @@
 @extends('cms.layout')
 @section('title')
-    CMS Edit services
+    CMS Edit Providing
 @endsection
 @section('content')
     <div class="content-body">
@@ -15,11 +15,12 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">services Edit Form</h4>
+                            <h4 class="card-title">Providing Edit Form</h4>
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('providing.update', $provide->id) }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @method('PATCH')
                                     @csrf
                                     <div class="row">

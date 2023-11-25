@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\cms;
 
 use App\Http\Controllers\Controller;
-use App\Models\Service;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ServiceController extends Controller
+class TestimonislController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ServiceController extends Controller
     public function index()
     {
         //
-        $services = service::all();
-        return view('cms.services.index', compact('services'));
+        $testimonials = Testimonial::all();
+        return view('cms.testimonial.index', compact('testimonials'));
     }
 
     /**
@@ -25,8 +25,8 @@ class ServiceController extends Controller
     public function create()
     {
         //
-        $service = new service();
-        return view('cms.services.create', compact('service'));
+        $detail = new Testimonial();
+        return view('cms.testimonial.create', compact('detail'));
     }
 
     /**
@@ -34,17 +34,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
         $data = request()->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required|mimes:png,jpg'
+            'name' => 'required',
+            'job' => 'required',
+            'image' => 'required'
         ]);
-        $icon_path = request()->file('image')->store('public/cms/service');
+        $icon_path = request()->file('image')->store('public/cms/testimonial');
         $data['image'] = basename($icon_path);
-        $succss = service::create($data);
+        $succss = Testimonial::create($data);
         if ($succss) {
-            return redirect()->route('service.index');
+            return redirect()->route('testimonial.index');
         } else {
             echo "save Faild";
         }
@@ -64,8 +66,8 @@ class ServiceController extends Controller
     public function edit(string $id)
     {
         //
-        $service = service::find($id);
-        return view('cms.services.edit', compact('service'));
+        $detail = Testimonial::find($id);
+        return view('cms.testimonial.edit', compact('testimonial'));
     }
 
     /**
@@ -74,24 +76,22 @@ class ServiceController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $detail = service::find($id);
+        $detail = Testimonial::find($id);
         $data = request()->validate([
             'title' => 'required',
             'content' => 'required',
             'image' => 'mimes:png,jpg'
         ]);
         if (request()->has('image')) {
-            Storage::delete('public/cms/service/' . $detail->image);
-            $icon_path = request()->file('image')->store('public/cms/service');
+            Storage::delete('public/cms/testimonial/' . $detail->image);
+            $icon_path = request()->file('image')->store('public/cms/testimonials');
             $data['image'] = basename($icon_path);
         } else {
             $data['image'] = $detail->image;
         }
         $success = $detail->update($data);
         if ($success) {
-            return redirect()->route('service.index');
-        } else {
-            echo "faild";
+            return redirect()->route('testimonial.index');
         }
     }
 
@@ -101,11 +101,11 @@ class ServiceController extends Controller
     public function destroy(string $id)
     {
         //
-        $detail = service::find($id);
-        Storage::delete('public/cms/service/' . $detail->image);
+        $detail = Testimonial::find($id);
+        Storage::delete('public/cms/testimonial/' . $detail->image);
         $success = $detail->delete();
         if ($success) {
-            return redirect()->route('service.index');
+            return redirect()->route('testimonial.index');
         }
     }
 }

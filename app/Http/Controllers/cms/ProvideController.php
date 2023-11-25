@@ -61,8 +61,8 @@ class ProvideController extends Controller
     public function edit(string $id)
     {
         //
-        $provide = Provide::finnd($id);
-        return view('cms.contact.edit', compact('provide'));
+        $provide = Provide::find($id);
+        return view('cms.providing.edit', compact('provide'));
     }
 
     /**
@@ -76,6 +76,10 @@ class ProvideController extends Controller
             'title' => 'required',
             'content' => 'required'
         ]);
+        $success = $detail->update($data);
+        if ($success) {
+            return redirect()->route('providing.index');
+        }
     }
 
     /**

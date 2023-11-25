@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('front') }}/css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="{{ url('front') }}/css/style.css">
+
     <!-- Responsive-->
     <link rel="stylesheet" href="{{ url('front') }}/css/responsive.css">
     <!-- fevicon -->

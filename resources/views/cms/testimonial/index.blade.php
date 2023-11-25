@@ -1,11 +1,11 @@
 @extends('cms.layout')
 @section('title')
-    cms services
+    cms testimonial
 @endsection
 @section('content')
     <!--**********************************
-                                                                                                                                    Content body start
-                                                                                                                                ***********************************-->
+                                                                                                                                                                                                                                        Content body start
+                                                                                                                                                                                                                                    ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="page-titles">
@@ -24,7 +24,7 @@
                         </svg>
                         Home </a>
                 </li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Services</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">testimonial</a></li>
             </ol>
         </div>
         <div class="container">
@@ -35,27 +35,30 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h4 class="heading mb-0 blog-title">Services Area</h4>
-                                    <a href="{{ route('service.create') }}" class="btn btn-primary btn-sm">Add New
-                                        Slider</a>
+                                    <h4 class="heading mb-0 blog-title">testimonial Area</h4>
+                                    <a href="{{ route('testimonial.create') }}" class="btn btn-primary btn-sm">Add New
+                                        testimonial</a>
                                 </div>
                                 <div class="card-body">
-                                    @foreach ($services as $service)
+                                    <span>add some content</span>
+                                    @foreach ($testimonials as $detail)
                                         <div class="third-post">
-                                            <img src="{{ url('storage/cms/service') }}/{{ $service->image }}">
+                                            <img src="">
                                             <div class="post-1">
                                                 <div class="post-data">
 
-                                                    <h4>{{ $service->title }}</h4>
-
                                                     <span>
-                                                        {{ $service->content }}
+                                                        {{ $detail->title }}
                                                     </span>
+                                                    <span>
+                                                        {{ $detail->content }}
+                                                    </span>
+                                                    <span>{{ $detail->name }}</span>
                                                     <hr>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('service.edit', $service->id) }}"
+                                                        <a href="{{ route('testimonial.edit', $detail->id) }}"
                                                             class="btn btn-success">Edit</a>
-                                                        <form action="{{ route('service.destroy', $service->id) }}"
+                                                        <form action="{{ route('testimonial.destroy', $detail->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
@@ -66,7 +69,6 @@
                                             </div>
                                         </div>
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
@@ -80,6 +82,6 @@
     </div>
 
     <!--**********************************
-                                                                                                                                    Content body end
-                                                                                                                                ***********************************-->
+                                                                                                                                                                                                                                        Content body end
+                                                                                                                                                                                                                                    ***********************************-->
 @endsection
