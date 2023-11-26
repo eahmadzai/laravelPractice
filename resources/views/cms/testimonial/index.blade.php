@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <!--**********************************
-                                                                                                                                                                                                                                        Content body start
-                                                                                                                                                                                                                                    ***********************************-->
+                                                                                                                                                                                                                                                                        Content body start
+                                                                                                                                                                                                                                                                    ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="page-titles">
@@ -41,24 +41,27 @@
                                 </div>
                                 <div class="card-body">
                                     <span>add some content</span>
-                                    @foreach ($testimonials as $detail)
+                                    @foreach ($testimonials as $testimonial)
                                         <div class="third-post">
-                                            <img src="">
+                                            <img src="{{ url('storage/cms/testimonial') }}/{{ $testimonial->image }}">
                                             <div class="post-1">
                                                 <div class="post-data">
 
                                                     <span>
-                                                        {{ $detail->title }}
+                                                        {{ $testimonial->title }}
                                                     </span>
                                                     <span>
-                                                        {{ $detail->content }}
+                                                        {{ $testimonial->content }}
                                                     </span>
-                                                    <span>{{ $detail->name }}</span>
+                                                    <span>{{ $testimonial->name }}</span>
+                                                    <span>
+                                                        {{ $testimonial->job }}
+                                                    </span>
                                                     <hr>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('testimonial.edit', $detail->id) }}"
+                                                        <a href="{{ route('testimonial.edit', $testimonial->id) }}"
                                                             class="btn btn-success">Edit</a>
-                                                        <form action="{{ route('testimonial.destroy', $detail->id) }}"
+                                                        <form action="{{ route('testimonial.destroy', $testimonial->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
@@ -82,6 +85,6 @@
     </div>
 
     <!--**********************************
-                                                                                                                                                                                                                                        Content body end
-                                                                                                                                                                                                                                    ***********************************-->
+                                                                                                                                                                                                                                                                        Content body end
+                                                                                                                                                                                                                                                                    ***********************************-->
 @endsection

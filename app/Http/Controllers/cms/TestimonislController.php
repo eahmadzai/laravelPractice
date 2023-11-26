@@ -67,7 +67,7 @@ class TestimonislController extends Controller
     {
         //
         $detail = Testimonial::find($id);
-        return view('cms.testimonial.edit', compact('testimonial'));
+        return view('cms.testimonial.edit', compact('detail'));
     }
 
     /**
@@ -76,20 +76,20 @@ class TestimonislController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $detail = Testimonial::find($id);
+        $testimonial = Testimonial::find($id);
         $data = request()->validate([
             'title' => 'required',
             'content' => 'required',
             'image' => 'mimes:png,jpg'
         ]);
         if (request()->has('image')) {
-            Storage::delete('public/cms/testimonial/' . $detail->image);
+            Storage::delete('public/cms/testimonial/' . $testimonial->image);
             $icon_path = request()->file('image')->store('public/cms/testimonials');
             $data['image'] = basename($icon_path);
         } else {
-            $data['image'] = $detail->image;
+            $data['image'] = $testimonial->image;
         }
-        $success = $detail->update($data);
+        $success = $testimonial->update($data);
         if ($success) {
             return redirect()->route('testimonial.index');
         }
@@ -101,9 +101,9 @@ class TestimonislController extends Controller
     public function destroy(string $id)
     {
         //
-        $detail = Testimonial::find($id);
-        Storage::delete('public/cms/testimonial/' . $detail->image);
-        $success = $detail->delete();
+        $testimonial = Testimonial::find($id);
+        Storage::delete('public/cms/testimonial/' . $testimonial->image);
+        $success = $testimonial->delete();
         if ($success) {
             return redirect()->route('testimonial.index');
         }
