@@ -6,10 +6,11 @@
             </div>
             <div class="contact_menu">
                 <ul>
-                    <li><img src="{{ url('front') }}/images/call-icon.png" class="padding_right_10"><a href="#"></a>
+                    <li><img src="{{ url('front') }}/images/call-icon.png" class="padding_right_10"><a
+                            href="#">{{ $contact->phone }}</a>
                     </li>
-                    <li><img src="{{ url('front') }}/images/mail-icon.png" class="padding_right_10"><a
-                            href="#"></a></li>
+                    <li><img src="{{ url('front') }}/images/mail-icon.png"
+                            class="padding_right_10">{{ $contact->email }}<a href="#"></a></li>
                     <li><img src="{{ url('front') }}/images/map-icon.png" class="padding_right_10"><a
                             href="#">Location: Kabul Afghanistan
                         </a></li>

@@ -5,37 +5,6 @@
 @section('content')
     <!-- banner section start -->
     <!--header section start -->
-    <div class="header_section">
-        <div class="container-fluid">
-            <div class="costum_header">
-                <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-                <div class="contact_menu">
-                    <ul>
-                        <li><img src="images/call-icon.png" class="padding_right_10"><a href="#">Call: +01 1234567890</a>
-                        </li>
-                        <li><img src="images/mail-icon.png" class="padding_right_10"><a href="#">Email:
-                                demo@gmail.com</a></li>
-                        <li><img src="images/map-icon.png" class="padding_right_10"><a href="#">Location: lorm
-                                ipusm</a></li>
-                    </ul>
-                </div>
-                <div class="menu_text">
-                    <div id="myNav" class="overlay">
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <div class="overlay-content">
-                            <a href="index.html">Home</a>
-                            <a href="services.html">Services</a>
-                            <a href="providing.html">Providing</a>
-                            <a href="choose.html">Choose</a>
-                        </div>
-                    </div>
-                    <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"
-                            class="toggle_menu"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- header section end -->
     <!-- banner section start -->
     <div class="banner_section layout_padding">
         <div class="container">
