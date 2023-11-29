@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChoseController;
 use App\Http\Controllers\cms\BlogController;
+use App\Http\Controllers\cms\ChooseController;
 use App\Http\Controllers\cms\ContactController;
 use App\Http\Controllers\cms\EmployeeController;
 use App\Http\Controllers\cms\FinanceController;
@@ -54,3 +55,4 @@ Route::resource('/admin/contact', ContactController::class);
 Route::resource('/admin/service', ServiceController::class);
 Route::resource('/admin/providing', ProvideController::class);
 Route::resource('admin/testimonial', TestimonislController::class);
+Route::resource('/admin/choose', ChooseController::class);

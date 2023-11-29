@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Choose;
 use App\Models\Contact;
 use App\Models\Provide;
 use App\Models\Service;
@@ -15,6 +16,7 @@ class HomeController extends Controller
     //
     public function index()
     {
+        $choose = Choose::first();
         $services = Service::all();
         $sliders = Slider::all();
         $contact = Contact::first();
