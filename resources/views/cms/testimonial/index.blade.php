@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <!--**********************************
-                                                                                                                                                                                                                                                                        Content body start
-                                                                                                                                                                                                                                                                    ***********************************-->
+                                                                                                                                                                                                                                                                            Content body start
+                                                                                                                                                                                                                                                                        ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="page-titles">
@@ -40,7 +40,6 @@
                                         testimonial</a>
                                 </div>
                                 <div class="card-body">
-                                    <span>add some content</span>
                                     @foreach ($testimonials as $testimonial)
                                         <div class="third-post">
                                             <img src="{{ url('storage/cms/testimonial') }}/{{ $testimonial->image }}">
@@ -85,6 +84,6 @@
     </div>
 
     <!--**********************************
-                                                                                                                                                                                                                                                                        Content body end
-                                                                                                                                                                                                                                                                    ***********************************-->
+                                                                                                                                                                                                                                                                            Content body end
+                                                                                                                                                                                                                                                                        ***********************************-->
 @endsection

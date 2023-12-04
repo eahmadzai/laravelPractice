@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <!--**********************************
-                                                                                                                                                                                                                                            Content body start
-                                                                                                                                                                                                                                        ***********************************-->
+                                                                                                                                                                                                                                                                                                                        Content body start
+                                                                                                                                                                                                                                                                                                                    ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="page-titles">
@@ -40,36 +40,38 @@
                                         choose</a>
                                 </div>
                                 <div class="card-body">
+                                    @if ($chooses == null)
+                                        <p>please add some content</p>
+                                    @else
+                                        @foreach ($chooses as $choose)
+                                            <div class="third-post">
+                                                <div class="post-1">
+                                                    <div class="post-data">
 
-                                    <div class="third-post">
-                                        @if ($choose == null)
-                                            <p>please add some content</p>
-                                        @else
-                                            <div class="post-1">
-                                                <div class="post-data">
+                                                        <h4>
+                                                            {{ $choose->title }}
+                                                        </h4>
 
-                                                    <h4>
-                                                        {{ $choose->title }}
-                                                    </h4>
-
-                                                    <span>
-                                                        {{ $choose->content }}
-                                                    </span>
-                                                    <hr>
-                                                    <div class="d-flex">
-                                                        <a href="{{ route('choose.edit', $choose->id) }}"
-                                                            class="btn btn-success">Edit</a>
-                                                        <form action="{{ route('choose.destroy', $choose->id) }}"
-                                                            method="POST">
-                                                            @method('DELETE')
-                                                            @csrf
-                                                            <button class="btn btn-danger">Delete</button>
-                                                        </form>
+                                                        <span>
+                                                            {{ $choose->content }}
+                                                        </span>
+                                                        <hr>
+                                                        <div class="d-flex float-end">
+                                                            <a href="{{ route('choose.edit', $choose->id) }}"
+                                                                class="btn btn-success btn-sm P-2">Edit</a>
+                                                            <form action="{{ route('choose.destroy', $choose->id) }}"
+                                                                method="POST">
+                                                                @method('DELETE')
+                                                                @csrf
+                                                                <button class="btn btn-danger btn-sm P-1">Delete</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endif
-                                    </div>
+                                        @endforeach
+                                    @endif
+
 
                                 </div>
                             </div>
@@ -84,6 +86,6 @@
     </div>
 
     <!--**********************************
-                                                                                                                                                                                                                                            Content body end
-                                                                                                                                                                                                                                        ***********************************-->
+                                                                                                                                                                                                                                                                                                                        Content body end
+                                                                                                                                                                                                                                                                                                                    ***********************************-->
 @endsection

@@ -15,8 +15,8 @@ class ChooseController extends Controller
     public function index()
     {
         //
-        $choose = Choose::first();
-        return view('cms.choose.index', compact('choose'));
+        $chooses = Choose::all();
+        return view('cms.choose.index', compact('chooses'));
     }
 
     /**

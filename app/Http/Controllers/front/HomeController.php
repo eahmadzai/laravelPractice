@@ -16,12 +16,12 @@ class HomeController extends Controller
     //
     public function index()
     {
-        $choose = Choose::first();
+        $chooses = Choose::all();
         $services = Service::all();
         $sliders = Slider::all();
         $contact = Contact::first();
         $provide = Provide::first();
         $testimonials = Testimonial::all();
-        return view('front.home.index', compact('sliders', 'contact', 'services', 'provide', 'testimonials'));
+        return view('front.home.index', compact('sliders', 'contact', 'services', 'provide', 'testimonials', 'chooses'));
     }
 }

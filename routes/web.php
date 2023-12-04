@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChoseController;
+use App\Http\Controllers\cms\AuthController;
 use App\Http\Controllers\cms\BlogController;
 use App\Http\Controllers\cms\ChooseController;
 use App\Http\Controllers\cms\ContactController;
@@ -38,7 +39,18 @@ Route::get('/', [HomeController::class, 'index'])->name('homeIndex');
 Route::get('/service', [ServiceController::class, 'index'])->name('serviceIndex');
 Route::get('/providing', [ProvidingController::class, 'index'])->name('providingIndex');
 Route::get('/chose us', [ChoseController::class, 'index'])->name('choseIndex');
-Route::get('/admin', [AdminController::class, 'index'])->name('adminIndex');
+
+
+Route::get('/admin', [AuthController::class, 'loginPage'])->name('adminLoginPage');
+Route::get('/admin/register/page', [AuthController::class, 'registerPage'])->name('adminRegisterPage');
+Route::post('/admin/register', [AuthController::class, 'register'])->name('adminRegister');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('adminLogin');
+
+
+
+
+
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('adminIndex');
 Route::get('/admin/employee/index', [EmployeeController::class, 'index'])->name('employeeIndex');
 Route::get('/admin/Hr/index', [HRController::class, 'index'])->name('HrIndex');
 Route::get('/admin/finance/index', [FinanceController::class, 'index'])->name('financeIndex');

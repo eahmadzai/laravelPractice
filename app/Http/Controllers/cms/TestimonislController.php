@@ -84,7 +84,7 @@ class TestimonislController extends Controller
         ]);
         if (request()->has('image')) {
             Storage::delete('public/cms/testimonial/' . $testimonial->image);
-            $icon_path = request()->file('image')->store('public/cms/testimonials');
+            $icon_path = request()->file('image')->store('public/cms/testimonial');
             $data['image'] = basename($icon_path);
         } else {
             $data['image'] = $testimonial->image;

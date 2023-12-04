@@ -89,15 +89,17 @@
             <h1 class="services_taital">Why <span style="color: #0c426e">Choose Us?</span></h1>
             <div class="choose_section_2 layout_padding">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="choose_box">
-                            <div class="number_1">
-                                <h4 class="number_text">01</h4>
-                                <h4 class="trusted_text">{{ $choose->title }}</h4>
+                    @foreach ($chooses as $choose)
+                        <div class="col-md-4">
+                            <div class="choose_box">
+                                <div class="number_1">
+                                    <h4 class="number_text">{{ $loop->index + 1 }}</h4>
+                                    <h4 class="trusted_text">{{ $choose->title }}</h4>
+                                </div>
+                                <p class="dummy_text">{{ $choose->content }}</p>
                             </div>
-                            <p class="dummy_text"></p>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -975,8 +975,8 @@
                                               <img src="{{ url('cms') }}/images/tab/1.jpg" alt="">
                                           </div>
                                           <div class="header-info">
-                                              <h6>Thomas Fleming</h6>
-                                              <p>info@gmail.com</p>
+                                              <h6>{{ $value->name }}</h6>
+                                              <p>{{ $value->email }}</p>
                                           </div>
 
                                       </div>
@@ -988,8 +988,8 @@
                                                   <img src="{{ url('cms') }}/images/tab/1.jpg"
                                                       class="avatar avatar-md" alt="">
                                                   <div>
-                                                      <h6>Thomas Fleming</h6>
-                                                      <span>Web Designer</span>
+                                                      <h6>{{ $value->name }}</h6>
+                                                      <span>{{ $value->email }}</span>
                                                   </div>
                                               </div>
                                           </div>
