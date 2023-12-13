@@ -313,7 +313,8 @@
   ***********************************-->
 <div class="footer">
     <div class="copyright">
-        <p>Copyright © Developed by <a href="https://dexignzone.com/" target="_blank">DexignZone</a> 2023</p>
+        <p>Copyright © Developed by <a href="https://dexignzone.com/" target="_blank">Ehsanullaah Ahmadzai <span
+                    class="text-danger">❤</span></a> 2023</p>
     </div>
 </div>
 <!--**********************************

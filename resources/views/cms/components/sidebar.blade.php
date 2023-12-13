@@ -92,9 +92,9 @@
                                 stroke="#888888" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <span class="nav-text">testimonial</span>
+                    <span class="nav-text">Testimonial</span>
                 </a>
-            </li>
+                {{-- </li>
             <li><a href="{{ route('choose.index') }}" class="" aria-expanded="false">
                     <div class="menu-icon">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -110,7 +110,7 @@
                     <span class="nav-text">Choose Us</span>
                 </a>
             </li>
-            {{-- <li class="menu-title">OUR FEATURES</li>
+            <li class="menu-title">OUR FEATURES</li>
             <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                     <div class="menu-icon">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -263,8 +263,8 @@
                     <li><a href="map-jqvmap.html">Jqv Map</a></li>
                     <li><a href="uc-lightgallery.html">Light Gallery</a></li>
                 </ul>
-            </li>
-            <li><a href="widget-basic.html" class="" aria-expanded="false">
+            </li> --}}
+                {{-- <li><a href="widget-basic.html" class="" aria-expanded="false">
                     <div class="menu-icon">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
                             xmlns="http://www.w3.org/2000/svg">

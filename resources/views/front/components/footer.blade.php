@@ -40,11 +40,12 @@
        </div>
    </div>
    <!-- footer section end -->
+
    <!-- copyright section start -->
    <div class="copyright_section">
        <div class="container">
            <p class="copyright_text">Copyright 2023 All Rights Reserved. Design by<a href="https://html.design">
-                   Ehsanullah Ahmadzai ❤</a></p>
+                   Ehsanullah Ahmadzai <span class="text-danger">❤</span></a></p>
        </div>
    </div>
 

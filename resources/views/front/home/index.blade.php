@@ -4,8 +4,6 @@
 @endsection
 @section('content')
     <!-- banner section start -->
-    <!--header section start -->
-    <!-- banner section start -->
     <div class="banner_section layout_padding">
         <div class="container">
             <div id="main_slider" class="carousel slide" data-ride="carousel">
@@ -48,8 +46,7 @@
     <div class="services_section layout_padding">
         <div class="container">
             <h1 class="services_taital">Our <span style="color: #0c426e">Services</span></h1>
-            <p class="services_text">t is a long established fact that a reader will be distracted by the readable content
-                of a page when looking </p>
+            <p class="services_text">we provide all the best services for you that you need </p>
             <div class="services_section_2 layout_padding">
                 <div class="row">
                     @foreach ($services as $service)
@@ -108,11 +105,9 @@
     <!-- testimonial section start -->
     <div class="testimonial_section layout_padding">
         <div class="container">
-
             <h1 class="testimonial_taital">Testimonial</h1>
             <div class="testimonial_section_2">
                 <div id="my_slider" class="carousel slide" data-ride="carousel">
-
                     <div class="carousel-inner">
                         @foreach ($testimonials as $index => $testimonial)
                             <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
@@ -132,8 +127,6 @@
                             </div>
                         @endforeach
                     </div>
-
-
                     <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
                         <i class="fa fa-arrow-left" aria-hidden="true"></i>
                     </a>

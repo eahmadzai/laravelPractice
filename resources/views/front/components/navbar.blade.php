@@ -16,7 +16,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div class="menu_text">
+            {{-- <div class="menu_text">
                 <div id="myNav" class="overlay">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <div class="overlay-content">
@@ -28,7 +28,7 @@
                 </div>
                 <span class="toggle_icon" onclick="openNav()"><img src="{{ url('front') }}/images/toggle-icon.png"
                         class="toggle_menu"></span>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
